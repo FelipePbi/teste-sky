@@ -2,6 +2,7 @@
   padding-right: 16px;
   padding-left: 16px;
   padding-top: 24px;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 
@@ -17,21 +18,17 @@
       height: max(288px, 25vw);
     }
   }
-}
 
-.skeleton-sections {
-  display: flex;
-  flex-direction: column;
-  margin-top: 24px;
-  align-items: center;
-  justify-content: center;
-  > span {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 36px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+
     > span {
-      width: 140px;
-      height: 210px;
+      display: flex;
+      gap: 10px;
+      > span {
+        width: 288px;
+        height: 168px;
+      }
     }
   }
 }

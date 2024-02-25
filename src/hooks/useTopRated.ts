@@ -15,7 +15,7 @@ export function useTopRated() {
   const [data, setData] = useState<ISectionMovie[]>([]);
 
   const fetchAPI = useCallback(async () => {
-    const url = "https://moviesdatabase.p.rapidapi.com/titles?list=top_rated_lowest_100&limit=5";
+    const url = "https://moviesdatabase.p.rapidapi.com/titles?limit=5&sort=year.decr&endYear=2022";
     const options = {
       method: "GET",
       headers: {
