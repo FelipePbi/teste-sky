@@ -1,0 +1,37 @@
+.tab-content-container {
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 24px;
+  overflow: hidden;
+}
+
+.skeleton-header {
+  display: flex;
+  margin-left: calc((max(512px, 50vw) / 2 + 110px) * -1);
+
+  > span {
+    display: flex;
+    gap: 15px;
+    > span {
+      width: max(512px, 50vw);
+      height: max(288px, 25vw);
+    }
+  }
+}
+
+.skeleton-sections {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: center;
+  > span {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    > span {
+      width: 140px;
+      height: 210px;
+    }
+  }
+}
