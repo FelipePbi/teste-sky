@@ -12,22 +12,22 @@ Aplicação usada para um teste de conhecimento.
 
 A ideia do aplicativo é referente a um desafio proposto a mim, com o seguinte contexto:
 
-_"Criar tela responsiva do layout:
+1 - Criar tela responsiva do layout:
 https://app.zeplin.io/project/5e29b6105e839f971f3f90bf/dashboard
-● Usar a API do MoviesDatabase para fazer os gets para cada carrossel, trazendo por
+2 - Usar a API do MoviesDatabase para fazer os gets para cada carrossel, trazendo por
 keyword diferente em cada carrossel, etc: terror, marvel, comic, classic, science, etc.
 https://rapidapi.com/SAdrian/api/moviesdatabase ou usar API alternativa, da
 TheMovieDB: https://developer.themoviedb.org/docs
-● Código limpo, organizado e semântico, com a melhor compatibilidade W3C e de
+3 - Código limpo, organizado e semântico, com a melhor compatibilidade W3C e de
 acessibilidade;
-● Uso de pré-processadores (SASS, LESS, etc);
-● Uso do framework bootstrap;
-● Fazer o request do primeiro carrossel com await, e só carregar os demais após o
+4 - Uso de pré-processadores (SASS, LESS, etc);
+5 - Uso do framework bootstrap;
+6 - Fazer o request do primeiro carrossel com await, e só carregar os demais após o
 primeiro estar pronto. Os demais podem ser síncronos;
-● Desenvolvimento JavaScript vanilla ou com uso do jQuery (porém, não usar $.ajax
+7 - Desenvolvimento JavaScript vanilla ou com uso do jQuery (porém, não usar $.ajax
 ou $.get do jQuery, e fazer as requests com fetch);
-● 5 itens no carrossel principal, e 15 itens em cada um dos outros 4 carrosséis;
-● Créditos adicionais para código versionado (comitado em git, bitbucket, etc),
+8 - 5 itens no carrossel principal, e 15 itens em cada um dos outros 4 carrosséis;
+9 - Créditos adicionais para código versionado (comitado em git, bitbucket, etc),
 gerenciado por npm e uso de gulp para tratamento de css/js;"_
 
 ## Algumas observações sobre este projeto
