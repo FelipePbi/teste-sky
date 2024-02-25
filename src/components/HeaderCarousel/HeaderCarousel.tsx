@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Image } from "react-bootstrap";
-
+import { useMediaQuery } from "@uidotdev/usehooks";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 
@@ -18,6 +18,8 @@ export interface IHeaderCarousel {
 }
 
 function HeaderCarousel({ items }: IHeaderCarousel) {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+
   const carouselItems = useMemo(
     () =>
       items.map(({ id, imageUrl, imageAlt }) => (
@@ -30,26 +32,27 @@ function HeaderCarousel({ items }: IHeaderCarousel) {
 
   return (
     <Swiper
-      grabCursor={true}
-      centeredSlides={true}
-      loop={true}
+      grabCursor={!isSmallDevice}
+      centeredSlides={!isSmallDevice}
+      loop={!isSmallDevice}
       slidesPerView={"auto"}
-      coverflowEffect={{
-        rotate: 0,
-        stretch: -35,
-        depth: 80,
-        modifier: 2.5,
-        slideShadows: true,
-      }}
-      effect="coverflow"
+      spaceBetween={10}
+      coverflowEffect={
+        !isSmallDevice
+          ? {
+              rotate: 0,
+              stretch: -35,
+              depth: 80,
+              modifier: 2.5,
+              slideShadows: true,
+            }
+          : undefined
+      }
+      effect={!isSmallDevice ? "coverflow" : "slide"}
       modules={[EffectCoverflow]}
-      pagination={{ el: ".swiper-pagination", clickable: true }}
+      className="header-wip"
     >
       {carouselItems}
-
-      <div className="slider-controler">
-        <div className="swiper-pagination"></div>
-      </div>
     </Swiper>
   );
 }
