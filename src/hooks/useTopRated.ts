@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { optionsAPI } from "./constants";
 
 interface ISectionMovie {
   id: string;
@@ -16,16 +17,9 @@ export function useTopRated() {
 
   const fetchAPI = useCallback(async () => {
     const url = "https://moviesdatabase.p.rapidapi.com/titles?limit=5&sort=year.decr&endYear=2022";
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "832da64e7cmsh7e2848d430b89a0p19d0f8jsnfa964bcf7380",
-        "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-      },
-    };
 
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url, optionsAPI);
       const result = await response.json();
 
       setData(result.results);

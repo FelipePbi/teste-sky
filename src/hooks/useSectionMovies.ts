@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { optionsAPI } from "./constants";
 
 interface ISectionMovie {
   id: string;
@@ -16,17 +17,10 @@ export function useSectionMovies(keyword: string, showSections: boolean) {
 
   const fetchAPI = useCallback(async () => {
     const url = `https://moviesdatabase.p.rapidapi.com/titles/search/keyword/${keyword}?info=image&sort=year.decr&limit=15`;
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "832da64e7cmsh7e2848d430b89a0p19d0f8jsnfa964bcf7380",
-        "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-      },
-    };
 
     try {
       setIsLoading(true);
-      const response = await fetch(url, options);
+      const response = await fetch(url, optionsAPI);
       const result = await response.json();
 
       setData(result.results);
